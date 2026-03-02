@@ -149,7 +149,7 @@ export const LeadForm = ({ onTriggerDemo }: { onTriggerDemo: () => void }) => {
           className="w-full h-14 text-lg font-bold text-white transition-all hover:opacity-90 active:scale-[0.98]"
           style={{ backgroundColor: VELTRA_PURPLE }}
         >
-          {loading ? "Registering Request..." : "Submit & Start Call"}
+          {loading ? "Registering Request..." : "Test Voice Agent"}
         </Button>
       </form>
     </div>
