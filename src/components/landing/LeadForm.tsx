@@ -18,6 +18,7 @@ export const LeadForm = ({ onTriggerDemo }: { onTriggerDemo: () => void }) => {
     const formData = new FormData(e.currentTarget);
     const data = {
       name: formData.get("name"),
+      company: formData.get("company"),
       email: formData.get("email"),
       phone: formData.get("phone"),
       address: formData.get("address"),
@@ -40,7 +41,7 @@ export const LeadForm = ({ onTriggerDemo }: { onTriggerDemo: () => void }) => {
       // 3. Navigate/Trigger Call Page
       onTriggerDemo();
     } catch (error) {
-      console.error("❌ Webhook Error:", error);
+      console.error(" Webhook Error:", error);
       // Fallback: Proceed to demo anyway so you don't lose the user
       onTriggerDemo();
     } finally {
@@ -64,6 +65,7 @@ export const LeadForm = ({ onTriggerDemo }: { onTriggerDemo: () => void }) => {
         onSubmit={handleSubmit}
         className="space-y-5"
       >
+        {/* Row 1: Name and Company */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
             <label className="text-xs font-semibold uppercase tracking-wider text-gray-500">
@@ -78,6 +80,33 @@ export const LeadForm = ({ onTriggerDemo }: { onTriggerDemo: () => void }) => {
           </div>
           <div className="space-y-2">
             <label className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+              Company Name
+            </label>
+            <Input
+              name="company"
+              placeholder="Aspi Homes"
+              required
+              className="bg-gray-800/50 border-gray-700 text-white focus:border-[#A259FF]"
+            />
+          </div>
+        </div>
+
+        {/* Row 2: Email and Phone */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <label className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+              Email Address
+            </label>
+            <Input
+              name="email"
+              type="email"
+              placeholder="john@example.com"
+              required
+              className="bg-gray-800/50 border-gray-700 text-white"
+            />
+          </div>
+          <div className="space-y-2">
+            <label className="text-xs font-semibold uppercase tracking-wider text-gray-500">
               Phone Number
             </label>
             <Input
@@ -88,19 +117,6 @@ export const LeadForm = ({ onTriggerDemo }: { onTriggerDemo: () => void }) => {
               className="bg-gray-800/50 border-gray-700 text-white"
             />
           </div>
-        </div>
-
-        <div className="space-y-2">
-          <label className="text-xs font-semibold uppercase tracking-wider text-gray-500">
-            Email Address
-          </label>
-          <Input
-            name="email"
-            type="email"
-            placeholder="john@example.com"
-            required
-            className="bg-gray-800/50 border-gray-700 text-white"
-          />
         </div>
 
         <div className="space-y-2">
@@ -133,7 +149,7 @@ export const LeadForm = ({ onTriggerDemo }: { onTriggerDemo: () => void }) => {
           className="w-full h-14 text-lg font-bold text-white transition-all hover:opacity-90 active:scale-[0.98]"
           style={{ backgroundColor: VELTRA_PURPLE }}
         >
-          {loading ? "Registering Request..." : "Submit"}
+          {loading ? "Registering Request..." : "Submit & Start Call"}
         </Button>
       </form>
     </div>
