@@ -9,9 +9,7 @@ const VELTRA_PURPLE = "#A259FF";
 // Define the call status types
 type CallStatus = "Ready" | "Connecting..." | "Active" | "Error";
 
-// This is the URL of my deployed Supabase Edge Function (reate-web-call)
-const API_ENDPOINT =
-  "https://rscawvacjytjdqlkmerj.supabase.co/functions/v1/create-web-call";
+const API_ENDPOINT = "/api/create-web-call";
 
 export const DemoCard = () => {
   // 3. Setup State and Refs
