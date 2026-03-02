@@ -165,12 +165,13 @@ export const DemoCard = () => {
       {/* Demo Scenario Box */}
       <div className="bg-gray-800/80 rounded-lg p-4 mb-8">
         <h3 className="text-lg font-semibold flex items-center mb-2 text-white">
-          Demo Scenario (Pest Control)
+          ASPI HOMES — Meet Tom
         </h3>
-        <p className="text-sm text-gray-400">
-          This is Tom, the voice receptionist for a UK pest control company. Try
-          asking for a quote for Rats, Wasps, or Fleas, and see how he handles
-          the booking! 😉
+        <p className="text-sm text-gray-400 leading-relaxed">
+          Meet Tom, our 24/7 automated triage assistant. Describe your
+          maintenance issue to receive immediate DIY guidance for emergencies or
+          to automatically book a priority service visit from our contractor
+          network.
         </p>
       </div>
 
