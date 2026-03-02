@@ -11,7 +11,7 @@ type CallStatus = "Ready" | "Connecting..." | "Active" | "Error";
 
 // This is the URL of my deployed Supabase Edge Function (reate-web-call)
 const API_ENDPOINT =
-  "https://rscawvacjytjdqlkmerj.supabase.co/functions/v1/reate-web-call";
+  "https://rscawvacjytjdqlkmerj.supabase.co/functions/v1/create-web-call";
 
 export const DemoCard = () => {
   // 3. Setup State and Refs
@@ -60,7 +60,7 @@ export const DemoCard = () => {
     // Ensure the client is ready
     if (typeof RetellWebClient === "undefined") {
       console.error(
-        "❌ [SDK CHECK] RetellWebClient is unavailable. SDK installation may have failed."
+        "❌ [SDK CHECK] RetellWebClient is unavailable. SDK installation may have failed.",
       );
       setCallStatus("Error");
       return;
@@ -82,7 +82,7 @@ export const DemoCard = () => {
       });
 
       console.log(
-        `📥 [TOKEN RESPONSE] Status: ${tokenResponse.status} ${tokenResponse.statusText}`
+        `📥 [TOKEN RESPONSE] Status: ${tokenResponse.status} ${tokenResponse.statusText}`,
       );
 
       const tokenData = await tokenResponse.json();
@@ -98,7 +98,7 @@ export const DemoCard = () => {
       console.log(
         "🔑 [TOKEN] Token length:",
         tokenData.access_token.length,
-        "characters"
+        "characters",
       );
 
       // 2. Initialize Retell Web Client and set Ref
@@ -106,7 +106,7 @@ export const DemoCard = () => {
       const client = new RetellWebClient();
       clientRef.current = client;
       console.log(
-        "✅ [CLIENT INIT] RetellWebClient initialized and stored in ref"
+        "✅ [CLIENT INIT] RetellWebClient initialized and stored in ref",
       );
 
       // 3. Set up event listeners for status updates (CRITICAL for a reliable UI)
